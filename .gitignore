@@ -1,0 +1,9 @@
+# ignore node_modules
+/node_modules
+/backend/config.env
+
+# ignore dumy files
+.DS_Store
+
+# ignore text editor files
+.vscode
