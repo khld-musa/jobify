@@ -100,7 +100,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text("title"),
-        backgroundColor: Colors.green,
+        backgroundColor: Colors.blueGrey,
       ),
       drawer: Drawer(
         child: SingleChildScrollView(

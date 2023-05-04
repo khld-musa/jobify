@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jobify/screens/home_screen.dart';
+import 'package:jobify/screens/login_page.dart';
 
 
 void main() {
@@ -17,9 +18,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
    scaffoldBackgroundColor: Colors.grey[50],
-        primarySwatch: Colors.green,
+        primarySwatch: Colors.blueGrey,
       ),
-      home: const HomeScreen(),
+      home: const LoginPage(),
     );
   }
 }
