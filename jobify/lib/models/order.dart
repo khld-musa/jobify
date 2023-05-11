@@ -1,18 +1,18 @@
 
 
-import 'package:jobify/models/food.dart';
-import 'package:jobify/models/restaurant.dart';
+import 'package:jobify/models/job.dart';
+import 'package:jobify/models/company.dart';
 
 
 class Order {
-  final Restaurant restaurant;
-  final Food food;
+  final Company company;
+  final Job food;
   final String date;
   final int quantity;
 
   Order({
     required this.date,
-    required this.restaurant,
+    required this.company,
     required this.food,
     required this.quantity,
   });

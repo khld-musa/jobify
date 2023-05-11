@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:jobify/data/data.dart';
 import 'package:jobify/screens/account.dart';
 import 'package:jobify/screens/my_drawer_header.dart';
-import 'package:jobify/screens/restaurant_screen.dart';
+import 'package:jobify/screens/company_screen.dart';
 import 'package:jobify/widgets/recent_orders.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -14,14 +14,14 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   _buildRestaurants() {
-    List<Widget> restaurantList = [];
-    for (var restaurant in restaurants) {
-      restaurantList.add(
+    List<Widget> companyList = [];
+    for (var company in companies) {
+      companyList.add(
         GestureDetector(
           onTap: () => Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (_) => RestaurantScreen(restaurant: restaurant),
+              builder: (_) => CompanyScreen(company: company),
             ),
           ),
           child: Container(
@@ -39,11 +39,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 ClipRRect(
                   borderRadius: BorderRadius.circular(15.0),
                   child: Hero(
-                    tag: restaurant.imageUrl,
+                    tag: company.imageUrl,
                     child: Image(
                       height: 80.0,
                       width: 80.0,
-                      image: AssetImage(restaurant.imageUrl),
+                      image: AssetImage(company.imageUrl),
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -56,17 +56,17 @@ class _HomeScreenState extends State<HomeScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         Text(
-                          restaurant.name,
+                          company.name,
                           style: const TextStyle(
                             fontSize: 20.0,
                             fontWeight: FontWeight.bold,
                           ),
                           overflow: TextOverflow.ellipsis,
                         ),
-                        // RatingStars(restaurant.rating),
+                        // RatingStars(company.rating),
                         // const SizedBox(height: 4.0),
                         Text(
-                          restaurant.address,
+                          company.job,
                           style: const TextStyle(
                             fontSize: 16.0,
                             fontWeight: FontWeight.w600,
@@ -92,7 +92,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       );
     }
-    return Column(children: restaurantList);
+    return Column(children: companyList);
   }
 
   @override

@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:jobify/models/food.dart';
-import 'package:jobify/models/restaurant.dart';
+import 'package:jobify/models/job.dart';
+import 'package:jobify/models/company.dart';
 
 
 
-class RestaurantScreen extends StatefulWidget {
-  final Restaurant restaurant;
+class CompanyScreen extends StatefulWidget {
+  final Company company;
 
-  RestaurantScreen({required this.restaurant});
+  CompanyScreen({required this.company});
 
   @override
-  _RestaurantScreenState createState() => _RestaurantScreenState();
+  _CompanyScreenState createState() => _CompanyScreenState();
 }
 
-class _RestaurantScreenState extends State<RestaurantScreen> {
-  _buildMenuItem(Food menuItem) {
+class _CompanyScreenState extends State<CompanyScreen> {
+  _buildMenuItem(Job menuItem) {
     return Center(
       child: Stack(
         alignment: Alignment.center,
@@ -102,11 +102,11 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
           Stack(
             children: <Widget>[
               Hero(
-                tag: widget.restaurant.imageUrl,
+                tag: widget.company.imageUrl,
                 child: Image(
                   height: 220.0,
                   width: MediaQuery.of(context).size.width,
-                  image: AssetImage(widget.restaurant.imageUrl),
+                  image: AssetImage(widget.company.imageUrl),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -141,7 +141,7 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     Text(
-                      widget.restaurant.name,
+                      widget.company.name,
                       style: TextStyle(
                         fontSize: 22.0,
                         fontWeight: FontWeight.w600,
@@ -156,7 +156,7 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
                   ],
                 ),
                 Text(
-                  widget.restaurant.address,
+                  widget.company.address,
                   style: TextStyle(fontSize: 18.0),
                 ),
               ],
@@ -219,8 +219,8 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
             child: GridView.count(
               padding: EdgeInsets.all(10.0),
               crossAxisCount: 2,
-              children: List.generate(widget.restaurant.menu.length, (index) {
-                Food food = widget.restaurant.menu[index];
+              children: List.generate(widget.company.jobs.length, (index) {
+                Job food = widget.company.jobs[index];
                 return _buildMenuItem(food);
               }),
             ),

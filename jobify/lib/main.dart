@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:jobify/screens/home_screen.dart';
 import 'package:jobify/screens/login_page.dart';
 
 

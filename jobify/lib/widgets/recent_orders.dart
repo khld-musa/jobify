@@ -49,7 +49,7 @@ class RecentOrders extends StatelessWidget {
                         ),
                         const SizedBox(height: 4.0),
                         Text(
-                          order.restaurant.name,
+                          order.company.name,
                           style: const TextStyle(
                             fontSize: 16.0,
                             fontWeight: FontWeight.w600,
